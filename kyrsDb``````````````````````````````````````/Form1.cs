@@ -485,7 +485,6 @@ namespace kyrsDb
             var ds = (from cam in _KyrsachContext.PlacedCameras
                      group cam by cam.Ad.Region into g
                      select new { Район = g.Key, количество = g.Count() });
-            tableOutDgv.DataSource = ds;
             Pagination(ds);
         }
 
@@ -495,7 +494,6 @@ namespace kyrsDb
             var ds = (from cam in _KyrsachContext.PlacedCameras
                       group cam by cam.Co.Company into g
                       select new { Владелец = g.Key, количество = g.Count() });
-            tableOutDgv.DataSource = ds;
             Pagination(ds);
         }
     }

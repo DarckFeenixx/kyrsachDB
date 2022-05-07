@@ -29,9 +29,9 @@ namespace kyrsDb
                 string queryString = $"DROP LOGIN {loginTB.Text} DROP USER {loginTB.Text}_u";
                 string connectionString = StaticHelpers.baseConnectionString;
 
-                using (SqlConnection connection = new SqlConnection(connectionString))
+                using (SqlConnection connection = new(connectionString))
                 {
-                    SqlCommand command = new SqlCommand(queryString, connection);
+                    SqlCommand command = new(queryString, connection);
                     connection.Open();
                     command.ExecuteNonQuery();
                 }
@@ -91,9 +91,9 @@ namespace kyrsDb
                         $" ALTER ROLE db_datawriter ADD MEMBER {loginTB.Text}_u";
                     string connectionString = StaticHelpers.baseConnectionString;
 
-                    using (SqlConnection connection = new SqlConnection(connectionString))
+                    using (SqlConnection connection = new(connectionString))
                     {
-                        SqlCommand command = new SqlCommand(queryString, connection);
+                        SqlCommand command = new(queryString, connection);
                         connection.Open();
                         command.ExecuteNonQuery();
                     }
