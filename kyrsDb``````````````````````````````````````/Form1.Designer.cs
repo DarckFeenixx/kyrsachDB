@@ -185,16 +185,16 @@ namespace kyrsDb
             this.mainGB.Controls.Add(this.tableOutDgv);
             this.mainGB.Location = new System.Drawing.Point(12, -3);
             this.mainGB.Name = "mainGB";
-            this.mainGB.Size = new System.Drawing.Size(1140, 591);
+            this.mainGB.Size = new System.Drawing.Size(1151, 591);
             this.mainGB.TabIndex = 2;
             this.mainGB.TabStop = false;
             this.mainGB.Visible = false;
             // 
             // NumCamPerOwnerBtn
             // 
-            this.NumCamPerOwnerBtn.Location = new System.Drawing.Point(802, 550);
+            this.NumCamPerOwnerBtn.Location = new System.Drawing.Point(810, 550);
             this.NumCamPerOwnerBtn.Name = "NumCamPerOwnerBtn";
-            this.NumCamPerOwnerBtn.Size = new System.Drawing.Size(329, 35);
+            this.NumCamPerOwnerBtn.Size = new System.Drawing.Size(341, 35);
             this.NumCamPerOwnerBtn.TabIndex = 53;
             this.NumCamPerOwnerBtn.Text = "Количество камер по владельцам";
             this.NumCamPerOwnerBtn.UseVisualStyleBackColor = true;
@@ -202,9 +202,9 @@ namespace kyrsDb
             // 
             // CamNumPerRegionBtn
             // 
-            this.CamNumPerRegionBtn.Location = new System.Drawing.Point(802, 509);
+            this.CamNumPerRegionBtn.Location = new System.Drawing.Point(810, 509);
             this.CamNumPerRegionBtn.Name = "CamNumPerRegionBtn";
-            this.CamNumPerRegionBtn.Size = new System.Drawing.Size(329, 35);
+            this.CamNumPerRegionBtn.Size = new System.Drawing.Size(341, 35);
             this.CamNumPerRegionBtn.TabIndex = 52;
             this.CamNumPerRegionBtn.Text = "Количество камер по районам";
             this.CamNumPerRegionBtn.UseVisualStyleBackColor = true;
@@ -212,9 +212,9 @@ namespace kyrsDb
             // 
             // GetLongMaintanceBtn
             // 
-            this.GetLongMaintanceBtn.Location = new System.Drawing.Point(802, 471);
+            this.GetLongMaintanceBtn.Location = new System.Drawing.Point(810, 471);
             this.GetLongMaintanceBtn.Name = "GetLongMaintanceBtn";
-            this.GetLongMaintanceBtn.Size = new System.Drawing.Size(329, 35);
+            this.GetLongMaintanceBtn.Size = new System.Drawing.Size(341, 35);
             this.GetLongMaintanceBtn.TabIndex = 51;
             this.GetLongMaintanceBtn.Text = "Давно не проводилось техобслуживние";
             this.GetLongMaintanceBtn.UseVisualStyleBackColor = true;
@@ -223,7 +223,7 @@ namespace kyrsDb
             // label12
             // 
             this.label12.AutoSize = true;
-            this.label12.Location = new System.Drawing.Point(802, 441);
+            this.label12.Location = new System.Drawing.Point(810, 441);
             this.label12.Name = "label12";
             this.label12.Size = new System.Drawing.Size(39, 20);
             this.label12.TabIndex = 50;
@@ -233,13 +233,13 @@ namespace kyrsDb
             // 
             this.filtHouseTB.Location = new System.Drawing.Point(881, 438);
             this.filtHouseTB.Name = "filtHouseTB";
-            this.filtHouseTB.Size = new System.Drawing.Size(250, 27);
+            this.filtHouseTB.Size = new System.Drawing.Size(270, 27);
             this.filtHouseTB.TabIndex = 49;
             // 
             // label11
             // 
             this.label11.AutoSize = true;
-            this.label11.Location = new System.Drawing.Point(802, 407);
+            this.label11.Location = new System.Drawing.Point(810, 407);
             this.label11.Name = "label11";
             this.label11.Size = new System.Drawing.Size(52, 20);
             this.label11.TabIndex = 48;
@@ -248,7 +248,7 @@ namespace kyrsDb
             // label10
             // 
             this.label10.AutoSize = true;
-            this.label10.Location = new System.Drawing.Point(802, 374);
+            this.label10.Location = new System.Drawing.Point(810, 374);
             this.label10.Name = "label10";
             this.label10.Size = new System.Drawing.Size(52, 20);
             this.label10.TabIndex = 47;
@@ -257,7 +257,7 @@ namespace kyrsDb
             // label9
             // 
             this.label9.AutoSize = true;
-            this.label9.Location = new System.Drawing.Point(802, 341);
+            this.label9.Location = new System.Drawing.Point(810, 341);
             this.label9.Name = "label9";
             this.label9.Size = new System.Drawing.Size(51, 20);
             this.label9.TabIndex = 46;
@@ -266,7 +266,7 @@ namespace kyrsDb
             // label8
             // 
             this.label8.AutoSize = true;
-            this.label8.Location = new System.Drawing.Point(802, 308);
+            this.label8.Location = new System.Drawing.Point(810, 308);
             this.label8.Name = "label8";
             this.label8.Size = new System.Drawing.Size(65, 20);
             this.label8.TabIndex = 45;
@@ -275,7 +275,7 @@ namespace kyrsDb
             // label7
             // 
             this.label7.AutoSize = true;
-            this.label7.Location = new System.Drawing.Point(799, 242);
+            this.label7.Location = new System.Drawing.Point(807, 242);
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(115, 20);
             this.label7.TabIndex = 44;
@@ -284,7 +284,7 @@ namespace kyrsDb
             // label6
             // 
             this.label6.AutoSize = true;
-            this.label6.Location = new System.Drawing.Point(799, 275);
+            this.label6.Location = new System.Drawing.Point(807, 275);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(87, 20);
             this.label6.TabIndex = 43;
@@ -293,7 +293,7 @@ namespace kyrsDb
             // label5
             // 
             this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(799, 209);
+            this.label5.Location = new System.Drawing.Point(807, 209);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(75, 20);
             this.label5.TabIndex = 42;
@@ -302,7 +302,7 @@ namespace kyrsDb
             // label4
             // 
             this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(799, 174);
+            this.label4.Location = new System.Drawing.Point(807, 174);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(118, 20);
             this.label4.TabIndex = 41;
@@ -311,7 +311,7 @@ namespace kyrsDb
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(802, 141);
+            this.label3.Location = new System.Drawing.Point(810, 141);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(63, 20);
             this.label3.TabIndex = 40;
@@ -321,70 +321,70 @@ namespace kyrsDb
             // 
             this.filtStreetTB.Location = new System.Drawing.Point(881, 404);
             this.filtStreetTB.Name = "filtStreetTB";
-            this.filtStreetTB.Size = new System.Drawing.Size(250, 27);
+            this.filtStreetTB.Size = new System.Drawing.Size(270, 27);
             this.filtStreetTB.TabIndex = 39;
             // 
             // filtRegionTB
             // 
             this.filtRegionTB.Location = new System.Drawing.Point(881, 371);
             this.filtRegionTB.Name = "filtRegionTB";
-            this.filtRegionTB.Size = new System.Drawing.Size(250, 27);
+            this.filtRegionTB.Size = new System.Drawing.Size(270, 27);
             this.filtRegionTB.TabIndex = 38;
             // 
             // filtCityTB
             // 
             this.filtCityTB.Location = new System.Drawing.Point(881, 338);
             this.filtCityTB.Name = "filtCityTB";
-            this.filtCityTB.Size = new System.Drawing.Size(250, 27);
+            this.filtCityTB.Size = new System.Drawing.Size(270, 27);
             this.filtCityTB.TabIndex = 37;
             // 
             // filtIpTB
             // 
             this.filtIpTB.Location = new System.Drawing.Point(881, 305);
             this.filtIpTB.Name = "filtIpTB";
-            this.filtIpTB.Size = new System.Drawing.Size(250, 27);
+            this.filtIpTB.Size = new System.Drawing.Size(270, 27);
             this.filtIpTB.TabIndex = 36;
             // 
             // filtDatePlacedTB
             // 
-            this.filtDatePlacedTB.Location = new System.Drawing.Point(923, 239);
+            this.filtDatePlacedTB.Location = new System.Drawing.Point(931, 239);
             this.filtDatePlacedTB.Name = "filtDatePlacedTB";
-            this.filtDatePlacedTB.Size = new System.Drawing.Size(208, 27);
+            this.filtDatePlacedTB.Size = new System.Drawing.Size(220, 27);
             this.filtDatePlacedTB.TabIndex = 35;
             // 
             // filtMacTB
             // 
-            this.filtMacTB.Location = new System.Drawing.Point(923, 272);
+            this.filtMacTB.Location = new System.Drawing.Point(931, 272);
             this.filtMacTB.Name = "filtMacTB";
-            this.filtMacTB.Size = new System.Drawing.Size(208, 27);
+            this.filtMacTB.Size = new System.Drawing.Size(220, 27);
             this.filtMacTB.TabIndex = 34;
             // 
             // filtOwnerTB
             // 
-            this.filtOwnerTB.Location = new System.Drawing.Point(923, 206);
+            this.filtOwnerTB.Location = new System.Drawing.Point(931, 206);
             this.filtOwnerTB.Name = "filtOwnerTB";
-            this.filtOwnerTB.Size = new System.Drawing.Size(208, 27);
+            this.filtOwnerTB.Size = new System.Drawing.Size(220, 27);
             this.filtOwnerTB.TabIndex = 33;
             // 
             // filtManufactorerTB
             // 
-            this.filtManufactorerTB.Location = new System.Drawing.Point(923, 171);
+            this.filtManufactorerTB.Location = new System.Drawing.Point(931, 171);
             this.filtManufactorerTB.Name = "filtManufactorerTB";
-            this.filtManufactorerTB.Size = new System.Drawing.Size(208, 27);
+            this.filtManufactorerTB.Size = new System.Drawing.Size(220, 27);
             this.filtManufactorerTB.TabIndex = 32;
             // 
             // filtModelTB
             // 
-            this.filtModelTB.Location = new System.Drawing.Point(923, 138);
+            this.filtModelTB.Location = new System.Drawing.Point(931, 138);
             this.filtModelTB.Name = "filtModelTB";
-            this.filtModelTB.Size = new System.Drawing.Size(208, 27);
+            this.filtModelTB.Size = new System.Drawing.Size(220, 27);
             this.filtModelTB.TabIndex = 31;
             // 
             // deleteBtn
             // 
             this.deleteBtn.Location = new System.Drawing.Point(1047, 97);
             this.deleteBtn.Name = "deleteBtn";
-            this.deleteBtn.Size = new System.Drawing.Size(84, 35);
+            this.deleteBtn.Size = new System.Drawing.Size(104, 35);
             this.deleteBtn.TabIndex = 30;
             this.deleteBtn.Text = "Удалить";
             this.deleteBtn.UseVisualStyleBackColor = true;
@@ -392,9 +392,9 @@ namespace kyrsDb
             // 
             // applyFilterBtn
             // 
-            this.applyFilterBtn.Location = new System.Drawing.Point(799, 97);
+            this.applyFilterBtn.Location = new System.Drawing.Point(807, 97);
             this.applyFilterBtn.Name = "applyFilterBtn";
-            this.applyFilterBtn.Size = new System.Drawing.Size(242, 35);
+            this.applyFilterBtn.Size = new System.Drawing.Size(234, 35);
             this.applyFilterBtn.TabIndex = 29;
             this.applyFilterBtn.Text = "Применить фильтры";
             this.applyFilterBtn.UseVisualStyleBackColor = true;
@@ -403,17 +403,17 @@ namespace kyrsDb
             // outInfoTb
             // 
             this.outInfoTb.BackColor = System.Drawing.SystemColors.ControlLightLight;
-            this.outInfoTb.Location = new System.Drawing.Point(799, 64);
+            this.outInfoTb.Location = new System.Drawing.Point(807, 64);
             this.outInfoTb.Name = "outInfoTb";
             this.outInfoTb.ReadOnly = true;
-            this.outInfoTb.Size = new System.Drawing.Size(332, 27);
+            this.outInfoTb.Size = new System.Drawing.Size(344, 27);
             this.outInfoTb.TabIndex = 28;
             // 
             // openEditFormsBtn
             // 
-            this.openEditFormsBtn.Location = new System.Drawing.Point(799, 14);
+            this.openEditFormsBtn.Location = new System.Drawing.Point(807, 14);
             this.openEditFormsBtn.Name = "openEditFormsBtn";
-            this.openEditFormsBtn.Size = new System.Drawing.Size(332, 43);
+            this.openEditFormsBtn.Size = new System.Drawing.Size(344, 43);
             this.openEditFormsBtn.TabIndex = 27;
             this.openEditFormsBtn.Text = "Открыть редактор";
             this.openEditFormsBtn.UseVisualStyleBackColor = true;
@@ -498,7 +498,7 @@ namespace kyrsDb
             this.tableOutDgv.Location = new System.Drawing.Point(6, 44);
             this.tableOutDgv.Name = "tableOutDgv";
             this.tableOutDgv.RowTemplate.Height = 25;
-            this.tableOutDgv.Size = new System.Drawing.Size(787, 541);
+            this.tableOutDgv.Size = new System.Drawing.Size(798, 541);
             this.tableOutDgv.TabIndex = 3;
             this.tableOutDgv.DoubleClick += new System.EventHandler(this.dataGridView1_DoubleClick);
             // 

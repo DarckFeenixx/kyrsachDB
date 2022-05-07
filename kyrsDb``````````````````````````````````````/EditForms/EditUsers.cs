@@ -43,7 +43,6 @@ namespace kyrsDb
             }
             catch (Exception)
             {
-                throw;
                 outTB.Text = "какая неудача";
             }
         }
@@ -105,7 +104,6 @@ namespace kyrsDb
             }
             catch (Exception)
             {
-                throw;
                 outTB.Text = "какая неудача";
 
             }
@@ -139,7 +137,6 @@ namespace kyrsDb
             }
             catch (Exception)
             {
-                throw;
                 outTB.Text = "какая неудача";
 
             }

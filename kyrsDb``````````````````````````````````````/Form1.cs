@@ -61,19 +61,20 @@ namespace kyrsDb
                 rowsPerPage = -1;
             }
         }
-        private void pagination<T>(List<T> ds) 
+        private void Pagination<T>(IQueryable<T> ds) 
         {
-            outInfoTb.Text = $"Всего строк: {ds.Count}, показано строк: ";
+            tableRowCount = ds.Count();
+            outInfoTb.Text = $"Всего строк: {ds.Count()} Показано строк: ";
             if (rowsPerPage < 0)
             {
-                tableOutDgv.DataSource = ds;
+                tableOutDgv.DataSource = ds.ToList();
             }
             else
             {
-                ds =  ds.Skip((pageNum - 1) * rowsPerPage).Take(rowsPerPage).ToList();
-                tableOutDgv.DataSource = ds;
+                ds =  ds.Skip((pageNum - 1) * rowsPerPage).Take(rowsPerPage);
+                tableOutDgv.DataSource = ds.ToList();
             }
-            outInfoTb.Text += ds.Count.ToString();
+            outInfoTb.Text += ds.Count().ToString() + $" Страница: {pageNum}";
         }
         private void ShowQuery() 
         {
@@ -107,8 +108,8 @@ namespace kyrsDb
                                               cam.MAC,
                                               Описание = cam.Description,
                                               Адрес = $"Город: {Adres.City}, Район: {Adres.Region}, Улица: {Adres.Street}, Дом: {Adres.House}"
-                                          }).ToList();
-                pagination(ds);
+                                          });
+                Pagination(ds);
             }
             else if (tableSelectCB.Text == "Модели")
             {
@@ -126,8 +127,8 @@ namespace kyrsDb
                               Скорость_записи = model.RecordSpeed,
                               Фокусное_расстояние = model.Focus,
                               Угол_обзора = model.Angle
-                          }).ToList();
-                pagination(ds);
+                          });
+                Pagination(ds);
             }
             else if (tableSelectCB.Text == "Адреса")
             {
@@ -143,8 +144,8 @@ namespace kyrsDb
                               Район = adres.Region,
                               Улица = adres.Street,
                               Дом = adres.House
-                          }).ToList();
-                pagination(ds);
+                          });
+                Pagination(ds);
             }
             else if (tableSelectCB.Text == "Владельцы")
             {
@@ -164,8 +165,8 @@ namespace kyrsDb
                               ИНН = cam.INN,
                               АдресID = cam.AddressAddressID,
                               Адрес = $"Город: {Adres.City}, Район: {Adres.Region}, Улица: {Adres.Street}, Дом: {Adres.House}"
-                          }).ToList();
-                pagination(ds);
+                          });
+                Pagination(ds);
             }
             else
             {
@@ -176,8 +177,8 @@ namespace kyrsDb
                               логин = user.Login,
                               пароль = user.Password,
                               организация = user.CameraOwnerID
-                          }).ToList();
-                pagination(ds);
+                          });
+                Pagination(ds);
             }
         }
         private void ManageFilters(List<string> filters) 
@@ -379,53 +380,57 @@ namespace kyrsDb
 
         private void deleteBtn_Click(object sender, EventArgs e)
         {
-            if (tableOutDgv.SelectedRows.Count == 0 || !tableShown) 
+
+            if (tableOutDgv.SelectedCells.Count == 0 || !tableShown)
             {
                 return;
             }
             if (tableSelectCB.Text == "Камеры")
             {
-                if (Convert.ToInt32(tableOutDgv.SelectedRows[0].Cells[2].Value) != appUser.IsAdmin) 
+                if (Convert.ToInt32(tableOutDgv.Rows[tableOutDgv.SelectedCells[0].RowIndex].Cells[2].Value) != appUser.IsAdmin)
                 {
-                    return; 
+                    return;
                 }
                 _KyrsachContext.PlacedCameras.Remove((from cam in _KyrsachContext.PlacedCameras
-                                                      where cam.InstalledCameraID == Convert.ToInt32(tableOutDgv.SelectedRows[0].Cells[0].Value)
+                                                      where cam.InstalledCameraID == Convert.ToInt32(tableOutDgv.Rows[tableOutDgv.SelectedCells[0].RowIndex].Cells[0].Value)
                                                       select cam).First());
             }
             else if (tableSelectCB.Text == "Модели")
             {
                 if (appUser.IsAdmin == -1) return;
                 _KyrsachContext.Cameras.Remove((from cam in _KyrsachContext.Cameras
-                                                      where cam.CameraID == Convert.ToInt32(tableOutDgv.SelectedRows[0].Cells[0].Value)
-                                                      select cam).First());
+                                                where cam.CameraID == Convert.ToInt32(tableOutDgv.Rows[tableOutDgv.SelectedCells[0].RowIndex].Cells[0].Value)
+                                                select cam).First());
             }
             else if (tableSelectCB.Text == "Адреса")
             {
-                if (appUser.IsAdmin == -1) return;
-                _KyrsachContext.Cameras.Remove((from cam in _KyrsachContext.Cameras
-                                                where cam.CameraID == Convert.ToInt32(tableOutDgv.SelectedRows[0].Cells[0].Value)
-                                                select cam).First());
+                if (appUser.IsAdmin != -1) return;
+                _KyrsachContext.Adresses.Remove((from cam in _KyrsachContext.Adresses
+                                                 where cam.AddressId == Convert.ToInt32(tableOutDgv.Rows[tableOutDgv.SelectedCells[0].RowIndex].Cells[0].Value)
+                                                 select cam).First());
 
             }
             else if (tableSelectCB.Text == "Владельцы")
             {
-                if (appUser.IsAdmin == -1)
+                if (appUser.IsAdmin != -1)
                 {
-                    return; 
+                    return;
                 }
-                if (Convert.ToInt32(tableOutDgv.SelectedRows[0].Cells[0].Value) == appUser.IsAdmin)
+                if (Convert.ToInt32(tableOutDgv.Rows[tableOutDgv.SelectedCells[0].RowIndex].Cells[0].Value) == appUser.IsAdmin)
                 {
                     _KyrsachContext.CameraOwners.Remove((from owner in _KyrsachContext.CameraOwners
-                                                         where Convert.ToInt32(tableOutDgv.SelectedRows[0].Cells[0].Value) == owner.CameraOwnerID
+                                                         where Convert.ToInt32(tableOutDgv.Rows[tableOutDgv.SelectedCells[0].RowIndex].Cells[0].Value) == owner.CameraOwnerID
                                                          select owner).First());
                 }
             }
             else
             {
-                if (appUser.IsAdmin == -1) return;
+                if (appUser.IsAdmin != -1) return;
                 MessageBox.Show("Для удаления пользователей используйте редактор");
             }
+            _KyrsachContext.SaveChanges();
+            pageNum = 1;
+            ShowQuery();
         }
 
         private void GetLongMaintanceBtn_Click(object sender, EventArgs e)
@@ -479,9 +484,9 @@ namespace kyrsDb
             //             group p by p.Company.Name;
             var ds = (from cam in _KyrsachContext.PlacedCameras
                      group cam by cam.Ad.Region into g
-                     select new { Район = g.Key, количество = g.Count() }).ToList();
+                     select new { Район = g.Key, количество = g.Count() });
             tableOutDgv.DataSource = ds;
-            pagination(ds);
+            Pagination(ds);
         }
 
         private void NumCamPerOwnerBtn_Click(object sender, EventArgs e)
@@ -489,9 +494,9 @@ namespace kyrsDb
             tableShown = false;
             var ds = (from cam in _KyrsachContext.PlacedCameras
                       group cam by cam.Co.Company into g
-                      select new { Владелец = g.Key, количество = g.Count() }).ToList();
+                      select new { Владелец = g.Key, количество = g.Count() });
             tableOutDgv.DataSource = ds;
-            pagination(ds);
+            Pagination(ds);
         }
     }
 }
