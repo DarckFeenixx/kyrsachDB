@@ -92,7 +92,7 @@ namespace kyrsDb
                                           where(Adres.Region.Contains(filtRegionTB.Text))
                                           where(Adres.Street.Contains(filtStreetTB.Text))
                                           where(Adres.House.ToString().Contains(filtHouseTB.Text))
-                                          where(string.Compare(cam.DateInstalled, filtDatePlacedTB.Text) >= 0) //thats a joke but i dont care
+                                          where(string.Compare(cam.DateInstalled.ToString(), filtDatePlacedTB.Text) >= 0) //thats a joke but i dont care
                                           where(cam.IP.Contains(filtIpTB.Text))
                                           where(cam.MAC.Contains(filtMacTB.Text))
                                           select new
@@ -318,7 +318,7 @@ namespace kyrsDb
                 LoginGb.Visible = false;
                 mainGB.Visible = true;
                 var options = new DbContextOptions<KyrsachContext>();
-                _KyrsachContext = new KyrsachContext(options, $"Server=localhost;Database=kyrsachDb;User Id={appUser.login};Password={passTB.Text}");
+                _KyrsachContext = new KyrsachContext(options, $"Server=localhost;Database=kyrsachDb_test;User Id={appUser.login};Password={passTB.Text}");
                 ShowQuery();
             }
             else 
@@ -466,7 +466,7 @@ namespace kyrsDb
                               Адрес = $"Город: {Adres.City}, Район: {Adres.Region}, Улица: {Adres.Street}, Дом: {Adres.House}"
                           }).ToList();
                 ds = (from a in ds
-                     where (DateTime.Compare(DateTime.Now, DateTime.Parse(a.Последнее_техобслуживание, new System.Globalization.CultureInfo("ru-RU"))
+                     where (DateTime.Compare(DateTime.Now, a.Последнее_техобслуживание
                      .AddDays(a.период_техобслуживания)) >= 0)
                      select a).ToList();
                 tableOutDgv.DataSource = ds;

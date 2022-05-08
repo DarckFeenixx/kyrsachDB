@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Microsoft.EntityFrameworkCore;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.ComponentModel.DataAnnotations;
@@ -9,6 +10,7 @@ using System.Threading.Tasks;
 
 namespace kyrsDb
 {
+    [Index(nameof(InstalledCamera.Coordinates), IsUnique = true)]
     public class InstalledCamera
     {
         [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
@@ -16,13 +18,18 @@ namespace kyrsDb
         public int? CoCameraOwnerID { get; set; }
         public int? CmCameraID { get; set; }
         public int? AdAddressID { get; set; }
+        [Required]
         public string Coordinates { get; set; }
         public string Description { get; set; }
         [DataType(DataType.Date)]
-        public string DateInstalled { get; set; }
+        [Required]
+        public DateTime DateInstalled { get; set; }
         [DataType(DataType.Date)]
-        public string DateLastMaintance { get; set; }
+        [Required]
+        public DateTime DateLastMaintance { get; set; }
+        [Required]
         public string IP { get; set; }
+        [Required]
         public string MAC { get; set; }
         public Address Ad { get; set; }
         public Camera Cm { get; set; }

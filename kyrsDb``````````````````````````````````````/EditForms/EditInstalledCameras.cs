@@ -65,8 +65,8 @@ namespace kyrsDb
                     entity.CoCameraOwnerID = Convert.ToInt32(ownerIdTB.Text);
                     entity.AdAddressID = Convert.ToInt32(addressIdTB.Text);
                     entity.Coordinates = coordinatesTB.Text;
-                    entity.DateInstalled = datePlacedTB.Text;
-                    entity.DateLastMaintance = maintanceTB.Text;
+                    entity.DateInstalled = DateTime.Parse(datePlacedTB.Text, new System.Globalization.CultureInfo("ru-RU"));
+                    entity.DateLastMaintance = DateTime.Parse(maintanceTB.Text, new System.Globalization.CultureInfo("ru-RU"));
                     entity.Description = descriptionTB.Text;
                     entity.IP = ipTB.Text;
                     entity.MAC = macTB.Text;
@@ -81,8 +81,8 @@ namespace kyrsDb
                         CoCameraOwnerID = Convert.ToInt32(ownerIdTB.Text),
                         AdAddressID = Convert.ToInt32(addressIdTB.Text),
                         Coordinates = coordinatesTB.Text,
-                        DateInstalled = datePlacedTB.Text,
-                        DateLastMaintance = maintanceTB.Text,
+                        DateInstalled = DateTime.Parse(datePlacedTB.Text, new System.Globalization.CultureInfo("ru-RU")),
+                        DateLastMaintance = DateTime.Parse(maintanceTB.Text, new System.Globalization.CultureInfo("ru-RU")),
                         Description = descriptionTB.Text,
                         IP = ipTB.Text,
                         MAC = macTB.Text
@@ -114,9 +114,9 @@ namespace kyrsDb
                 addressIdTB.Text = entity.AdAddressID.ToString();
                 ownerIdTB.Text = entity.CoCameraOwnerID.ToString();
                 coordinatesTB.Text = entity.Coordinates;
-                datePlacedTB.Text = entity.DateInstalled;
+                datePlacedTB.Text = entity.DateInstalled.ToString();
                 descriptionTB.Text = entity.Description;
-                maintanceTB.Text = entity.DateLastMaintance;
+                maintanceTB.Text = entity.DateLastMaintance.ToString();
                 ipTB.Text = entity.IP;
                 macTB.Text = entity.MAC;
             }

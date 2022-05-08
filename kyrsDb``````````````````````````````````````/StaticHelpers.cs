@@ -8,7 +8,7 @@ namespace kyrsDb
 {
     public static class StaticHelpers
     {
-        public static readonly string baseConnectionString = @"Server=localhost;Database=kyrsachDb;User Id=kyrsach;Password=1pq0!PQ)";
+        public static readonly string baseConnectionString = @"Server=localhost;Database=kyrsachDb_test;User Id=kyrsach;Password=1pq0!PQ)";
         public static readonly List<string> filtersInstalledCameras = new()
         { 
             "filtModelTB",
